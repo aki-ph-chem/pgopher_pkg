@@ -10,7 +10,7 @@ pkgrel=1
 epoch=
 pkgdesc="pgopher"
 arch=('x86_64')
-url=""
+url="https://pgopher.chm.bris.ac.uk/Help/main.htm"
 license=('LGPL')
 groups=()
 depends=()
@@ -28,6 +28,17 @@ source=("http://pgopher.chm.bris.ac.uk/download/$pkgname-$arch-linux-$pkgver.tgz
 noextract=()
 md5sums=()
 validpgpkeys=()
+
+source_filename="${source[0]##*/}"
+source_url="${source[0]}"
+prepare() {
+    if [ -f "$source_filename" ]; then
+        echo "Using existing $source_filename"
+    else
+        echo "Downloading $source_filename"
+        curl -L -O "$source_url"
+    fi
+}
 
 package() {
     install -Dm755 ${srcdir}/pgopher -t ${pkgdir}/usr/bin
