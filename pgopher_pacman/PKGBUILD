@@ -24,7 +24,8 @@ backup=()
 options=()
 install=
 changelog=
-source=("http://pgopher.chm.bris.ac.uk/download/$pkgname-$arch-linux-$pkgver.tgz")
+source_x86_64=("http://pgopher.chm.bris.ac.uk/download/$pkgname-$arch-linux-$pkgver.tgz")
+source=("$pkgname.desktop" "$pkgname.gif")
 noextract=()
 md5sums=()
 validpgpkeys=()
@@ -33,6 +34,10 @@ package() {
     install -Dm755 ${srcdir}/pgopher -t ${pkgdir}/usr/bin
     install -Dm755 ${srcdir}/pgo -t ${pkgdir}/usr/bin
     install -Dm755 ${srcdir}/tabslave -t ${pkgdir}/usr/bin
+    install -Dm644 ${srcdir}/${pkgname}.desktop -t ${pkgdir}/usr/share/applications
+    install -Dm644 ${srcdir}/${pkgname}.gif ${pkgdir}/usr/share/icons/${pkgname}.gif
 }
 
-sha256sums=('SKIP')
+sha256sums=('bc6cc6c0c1e5ac54d02693351db0df968ff429274c219f5ac8c1ad566da11500'
+            'ca14cc8e5786462131b714ee90317342f6b77fd00fbe2be6626cf733714984da')
+sha256sums_x86_64=('SKIP')

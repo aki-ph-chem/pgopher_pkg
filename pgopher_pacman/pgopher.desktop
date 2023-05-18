@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=pgopher
+Comment=Widely used simulator for spectroscopy
+Exec=/usr/bin/pgopher
+Icon=/usr/share/icons/pgopher.gif
+Categories=Science;
