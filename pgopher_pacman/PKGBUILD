@@ -8,12 +8,12 @@ pkgname=pgopher
 pkgver=gtk2
 pkgrel=1
 epoch=
-pkgdesc="pgopher"
+pkgdesc="PGOPHER, a program for rotational, vibrational and electronic spectra"
 arch=('x86_64')
-url=""
+url="https://pgopher.chm.bris.ac.uk"
 license=('LGPL')
 groups=()
-depends=()
+depends=('gtk2')
 makedepends=()
 checkdepends=()
 optdepends=()
@@ -24,7 +24,8 @@ backup=()
 options=()
 install=
 changelog=
-source=("http://pgopher.chm.bris.ac.uk/download/$pkgname-$arch-linux-$pkgver.tgz")
+source_x86_64=("http://pgopher.chm.bris.ac.uk/download/$pkgname-$arch-linux-$pkgver.tgz")
+source=("$pkgname.desktop" "$pkgname.gif")
 noextract=()
 md5sums=()
 validpgpkeys=()
@@ -33,6 +34,10 @@ package() {
     install -Dm755 ${srcdir}/pgopher -t ${pkgdir}/usr/bin
     install -Dm755 ${srcdir}/pgo -t ${pkgdir}/usr/bin
     install -Dm755 ${srcdir}/tabslave -t ${pkgdir}/usr/bin
+    install -Dm644 ${srcdir}/${pkgname}.desktop -t ${pkgdir}/usr/share/applications
+    install -Dm644 ${srcdir}/${pkgname}.gif ${pkgdir}/usr/share/icons/${pkgname}.gif
 }
 
-sha256sums=('SKIP')
+sha256sums=('dda3fafdf44adac1a18c06e2ceef7043076938530ab9032710aa21a172d113ed'
+            'ca14cc8e5786462131b714ee90317342f6b77fd00fbe2be6626cf733714984da')
+sha256sums_x86_64=('SKIP')
