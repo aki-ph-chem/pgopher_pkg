@@ -2,7 +2,7 @@
 Version=1.0
 Type=Application
 Name=pgopher
-Comment=Widely used simulator for spectroscopy
+Comment="PGOPHER, a program for rotational, vibrational and electronic spectra"
 Exec=/usr/bin/pgopher
 Icon=/usr/share/icons/pgopher.gif
 Categories=Science;

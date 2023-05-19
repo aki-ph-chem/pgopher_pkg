@@ -8,12 +8,12 @@ pkgname=pgopher
 pkgver=gtk2
 pkgrel=1
 epoch=
-pkgdesc="pgopher"
+pkgdesc="PGOPHER, a program for rotational, vibrational and electronic spectra"
 arch=('x86_64')
-url=""
+url="https://pgopher.chm.bris.ac.uk"
 license=('LGPL')
 groups=()
-depends=()
+depends=('gtk2')
 makedepends=()
 checkdepends=()
 optdepends=()
@@ -38,6 +38,6 @@ package() {
     install -Dm644 ${srcdir}/${pkgname}.gif ${pkgdir}/usr/share/icons/${pkgname}.gif
 }
 
-sha256sums=('bc6cc6c0c1e5ac54d02693351db0df968ff429274c219f5ac8c1ad566da11500'
+sha256sums=('dda3fafdf44adac1a18c06e2ceef7043076938530ab9032710aa21a172d113ed'
             'ca14cc8e5786462131b714ee90317342f6b77fd00fbe2be6626cf733714984da')
 sha256sums_x86_64=('SKIP')
